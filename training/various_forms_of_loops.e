@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "[
 		In this Training Class, we're going to examine various forms of loops.
 		]"
@@ -24,6 +24,8 @@ feature -- From Loops
 				i := i + 1
 			end
 		end
+
+feature -- Across Loops
 
 	iterate_over_an_arrayed_list
 			-- How to `iterate_over_an_arrayed_list'.
@@ -86,6 +88,73 @@ feature -- From Loops
 				--			in the cursor where the cursor index is presently pointing.
 		end
 
+	bertrands_examples
+		note
+			EIS: "src=https://bertrandmeyer.com/2010/01/26/more-expressive-loops-for-eiffel/"
+			synopsis: "[
+				Dr. Bertrand Meyer provides a number of example uses of the across loop.
+				The code (below) allows us to bring these examples in from the cold of
+				just an internet page to something actually compiled and testable.
+				]"
+			warning: "[
+				A number of coding conventions will NOT be held here (compare to {CODING_CONVENTIONS}).
+				Why? The material presented (below) is taken from an academic setting. Many times,
+				such examples are shortened for brevity so the point being taught is not lost in the
+				details of best-practice conventions. Therefore, we see `s' as a STRING and `sum' as
+				an INTEGER, but without the suggested `l_*' prefix. In short examples, this lack of
+				convention will not be missed because the code is rather small and easily understood.
+				]"
+		local
+			s, a: STRING
+			sum,m,n: INTEGER
+		do
+				-- Some prep work ...
+			s := "this is a string"; a := s
+			m := 1; n := a.count
+
+				-- Example 1
+	        across s as c from sum := 0  loop sum := sum + c.cursor_index * c.item.code end -- NOTE: Slight changes from the article code
+			-- Computes Σ i * s [i]
+
+				-- Example 2
+			across m |..| n  as c from sum := 0  loop sum := sum + a [c.item].code end -- NOTE: Slight changes from the article code
+			-- Computes Σ a [i], for i ranging from m to n, for an array (or other structure) a.
+
+				-- Example 3: Putting it in reverse
+			across s.new_cursor.reversed as c loop print (c.item) end
+			-- to print elements in reverse order. (Using Eiffel’s operator
+			--	mechanism, you may write – s.new_cursor, with a minus operator,
+			--	as a synonym for new_cursor.reversed.) The function reversed
+			--	gives you a new cursor on the same target structure, enabling
+			--	you to iterate backwards.
+
+				-- Or you can use ... iterate over every third item.
+			across s.new_cursor + 3 as c loop print (c.item) end
+			-- (using s.new_cursor.incremented (3) rather than s.new_cursor + 3
+			--	if you are not too keen on operator syntax) to iterate over every
+			--	third item.
+
+			-- NOTE: Sometimes, of course, you do want to change a structure while
+			--	traversing it; for example you may want to add an element just to
+			--	the right of the iteration position. If you know what you are doing
+			--	that’s fine. (Let me correct this: if you know what you are doing,
+			--	express it through precise contracts, and you’ll be fine.) But then
+			--	you should not use the abstract forms of the loop, across…; you
+			--	should control the iteration itself through the basic form
+			--	from … until … with explicit cursor manipulation, protected by
+			--	appropriate contracts.
+
+			-- The two styles, by the way, are not distinct constructs. Eiffel
+			--	has always had only one form of loop and this continues the case.
+			--	The across forms are simply new possibilities added to the classical
+			--	loop construct, with obvious constraints stating for example that
+			--	you may not have both a some or all form and an explicit  loop body.
+			--	In particular, an across loop can still have an invariant clause ,
+			--	specifying the correctness properties of the loop, as in
+		end
+
+feature -- Across-From Combined
+
 	across_and_from_can_be_combined
 			-- Here is how `across_and_from_can_be_combined'!
 		note
@@ -112,6 +181,8 @@ feature -- From Loops
 				print (ic.item.out + ",") -- Outputs: 0,10,20,30,40,50,
 			end
 		end
+
+feature -- Loop Variant and Invariant
 
 	prevent_endless_loops
 			-- How to `prevent_endless_loops'!
