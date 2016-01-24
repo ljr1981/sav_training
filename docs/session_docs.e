@@ -2,7 +2,9 @@ note
 	description: "A place to put notes and documentation related to Training Sessions."
 
 	process: "As more sessions are added, put their notes at the TOP of the `session_notes' tag (below)."
-	
+
+	EIS: "name=class_tool_quick_reference", "src=Eiffel Studio - Class Tool - Quick Reference.pdf", "protocol=PDF"
+
 	session_notes: "[
 		Saturday, January 23rd, 2016
 		============================
