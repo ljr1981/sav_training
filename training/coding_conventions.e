@@ -5,7 +5,7 @@ note
 		come to use over the past 5 1/2 years. Enjoy!
 		]"
 
-deferred class
+class
 	CODING_CONVENTIONS
 
 feature -- Convention Examples
@@ -15,7 +15,7 @@ feature -- Convention Examples
 	AndCamelCaseIsNotMuchBetterReally,
 	EvenShortOnes,
 	but_this_is_okay,
-	or_even_this: detachable ANY
+	or_even_this: ANY
 			-- How to and how to not build feature names.
 		note
 			synopsis: "[
@@ -25,6 +25,7 @@ feature -- Convention Examples
 				(4) We find that underscores are just easier on the eyes.
 				]"
 		attribute
+			create Result
 		end
 
 	when_passing_arguments (a_like_this_one: INTEGER)

@@ -139,11 +139,11 @@ feature -- From Loops
 		do
 			from
 				i := 1
-				v := 1_000_001
+				v := 1_001
 			until
-				i > 1_000_000
+				i > 1_000
 			loop
-				-- i := i + 1  ... What if I forget to increment my loop counter?
+				i := i + 1  -- What if I forget to increment my loop counter?
 				--					If I do, my loop will never stop because 1 (i)
 				--					will never increment and get larger than 1_000_000.
 				v := v - 1
