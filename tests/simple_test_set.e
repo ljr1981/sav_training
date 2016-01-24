@@ -28,6 +28,7 @@ feature -- Test routines
 		local
 			l_simple: SIMPLEST_BUT_NOT_VERY_USEFUL_CLASS
 			l_product: PRODUCT
+			l_loops: VARIOUS_FORMS_OF_LOOPS
 		do
 			create l_product.make (["AB1000", "MADE UP PRODUCT NAME"])
 		end
