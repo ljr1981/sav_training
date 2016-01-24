@@ -47,6 +47,14 @@ feature -- From Loops
 											-- An ARRAY [REAL] is: 		<<1.1, 2.7, 3.4, 5.1>>
 											-- In all cases << signals ARRAY and the manifest type signals the [G] of ARRAY [G]
 
+				-- Using a from-loop (like above) ...
+			from l_names.start -- Puts the cursor index at the first item (if there is one)
+			until l_names.off -- Iterate until the cursor index is after the last item (count + 1)
+			loop
+				print (l_names.item_for_iteration.out) -- The item we're on while iterating
+				l_names.forth -- Move the cursor index to the next item in the list (or off if we are at the end)
+			end
+
 				-- Now lets go "across" the `l_names' list (i.e. iterate it) ...
 			across l_names as ic_names loop
 				print (ic_names.item)
