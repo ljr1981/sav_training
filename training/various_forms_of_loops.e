@@ -47,9 +47,18 @@ feature -- From Loops
 											-- An ARRAY [REAL] is: 		<<1.1, 2.7, 3.4, 5.1>>
 											-- In all cases << signals ARRAY and the manifest type signals the [G] of ARRAY [G]
 
-				-- Now lets go "across" the list (i.e. iterate it) ...
+				-- Now lets go "across" the `l_names' list (i.e. iterate it) ...
 			across l_names as ic_names loop
 				print (ic_names.item)
+			end
+
+				-- We can go directly across manifest arrays too ...
+			across <<"Fred", "Wilma", "Pebbles", "Barney", "Betty", "Bam-bam">> as ic loop
+				print (ic.item)
+			end
+				-- or ...
+			across <<0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100>> as ic loop
+				print (ic.item.out + ",") -- Outputs: 0,10,20,30,40,50,60,70,80,90,100,
 			end
 
 				-- We can also iterate over or "go across" integers as well ...
@@ -67,6 +76,84 @@ feature -- From Loops
 				--			`ic.item' is {ITERATION_CURSOR}.item --that is--the class has a feature called `item',
 				--			which is what the "across loop" it iterating over and the `item' represents the item
 				--			in the cursor where the cursor index is presently pointing.
+		end
+
+	across_and_from_can_be_combined
+			-- Here is how `across_and_from_can_be_combined'!
+		note
+			synopsis: "[
+				The "across" and "from" loops are not necessarily separate constructs.
+				The "across" tells the compiler that we're iterating over something {ITERABLE}.
+				The "from" tells the compiler that the code-block within it is prep-work
+				for the loop at large. The until says, "We may not iterate over the entire
+				{ITERABLE} thing." The "loop" part is still the loop part--that is--code
+				that is executed for each item in the {ITERABLE} thing.
+				
+				NOTE: across and from loops can get even more expressive (see examples below).
+				]"
+		local
+			i: INTEGER
+		do
+			across
+				<<0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100>> as ic
+			from
+				i := 55
+			until
+				ic.item > i
+			loop
+				print (ic.item.out + ",") -- Outputs: 0,10,20,30,40,50,
+			end
+		end
+
+	prevent_endless_loops
+			-- How to `prevent_endless_loops'!
+		note
+			synopsis: "[
+				From time to time, we write loops which never end. We call
+				them "endless". An endless loop is a bug. All loops must end!
+				The simplest way to prevent a loop from being endless is to
+				provide a "variant", which is a sort of "count-down" value,
+				starting at some high value and decreasing to zero. When the
+				variant value goes negative, the compiler will stop the loop
+				and declare an error.
+				
+				We do not have to be precise in knowing what is the max number
+				of iterations our loop will make. We may or may not know the
+				precise value. When we do not know the precise value, we can
+				guess--that is okay! The point of the variant is to stop the
+				loop from running endlessly.
+				
+				The variant helps to tell a reader of the code the intent of
+				the designer of the code. It says, "Here--and no further!"
+				Knowing the variant may also reveal something about the nature
+				of the problem we are solving.
+				
+				Because of the way the "variant" works, it is a powerful
+				bug preventing mechanism in our loops. PLEASE--use a loop
+				variant as often as you can! It may not only reveal an
+				endless loop, but a loop that one day may run longer than
+				you originally thought--and YOU WANT to know that as well!
+				]"
+		local
+			i,v: INTEGER
+		do
+			from
+				i := 1
+				v := 1_000_001
+			until
+				i > 1_000_000
+			loop
+				-- i := i + 1  ... What if I forget to increment my loop counter?
+				--					If I do, my loop will never stop because 1 (i)
+				--					will never increment and get larger than 1_000_000.
+				v := v - 1
+			variant
+				v -- declares that `v' is not just some number. Once `v' is declared as
+					-- the "variant", it is expected to decrement by at least 1 on each
+					-- iteration. If it does not, this is also considered an error, and
+					-- the program stops, thereby putting a failsafe on the nature of the
+					-- operation of the variant value.
+			end
 		end
 
 end
