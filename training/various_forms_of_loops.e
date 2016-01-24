@@ -156,4 +156,46 @@ feature -- From Loops
 			end
 		end
 
+	the_loop_invariant
+			-- How to use `the_loop_invariant'.
+		note
+			synopsis: "[
+				In the example loop below, we see two significant things:
+				(1) We see that our "counter" `i' is both a counter and a loop variant
+					(i.e. it is counting down to 0)
+				(2) We see a new thing: "invariant" followed by a "tag" and a boolean expression.
+				
+				The intent of this loop is to count down from 1_000 to 0 by two's. The loop
+				invariant states that before the loop starts that the value of `i' must be
+				evenly divisable by 2. This same boolean assertion must hold True after
+				each iteration of the loop. If it does not, then we're not counting down
+				by two's--are we??? :-)
+				
+				NOTE: You can have as many invariants as you like! For example:
+						we also want to express that we're actually counting
+						down and NOT up!
+						
+				So--the tag `even' is a logical boolean assertion that `i' is even
+				and the tag `down' is a logical boolean assertion that `j' is always
+				greater than `i', which proves we're counting down and not up!
+				]"
+		local
+			i,j: INTEGER
+		do
+			from
+				i := 1_000
+				j := i + 2 -- Sets `j' and satisfies the loop invariant the first time
+			invariant
+				even: (i \\ 2) = 0
+				down: i < j
+			until
+				i = 0
+			loop
+				j := i	-- Captures the "old" value of `i' for the invariant "down".
+				i := i - 2
+			variant
+				i
+			end
+		end
+
 end
