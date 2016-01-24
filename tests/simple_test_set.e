@@ -36,7 +36,10 @@ feature -- Test routines
 			create l_loops
 			l_loops.across_and_from_can_be_combined
 			l_loops.basic_from_loop
-			l_loops.bertrands_examples
+			l_loops.bertrands_example_1
+			l_loops.bertrand_example_2
+			l_loops.bertrand_example_3
+			l_loops.bertrand_example_4
 			l_loops.iterate_over_an_arrayed_list
 			l_loops.prevent_endless_loops
 			l_loops.the_loop_invariant
