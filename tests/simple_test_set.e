@@ -29,7 +29,7 @@ feature -- Test routines
 			l_simple: SIMPLEST_BUT_NOT_VERY_USEFUL_CLASS
 			l_product: PRODUCT
 		do
-			do_nothing
+			create l_product.make (["AB1000", "MADE UP PRODUCT NAME"])
 		end
 
 end

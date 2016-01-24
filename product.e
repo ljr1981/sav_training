@@ -10,10 +10,17 @@ feature {NONE} -- Initialization
 
 	make (a_objects: attached like creation_objects_anchor)
 			-- Initialize Current.
+		require
+			has_id: not a_objects.id.is_empty
+			has_name: not a_objects.name.is_empty
 		do
 			id := a_objects.id
 			name := a_objects.name
 			create price.make_from_string ("0.00")
+		ensure
+			id_set: id.same_string (a_objects.id)
+			name_set: name.same_string (a_objects.name)
+			zero_priced: price.is_zero
 		end
 
 feature -- Access
@@ -41,11 +48,14 @@ feature {NONE} -- Implementation
 feature -- Setters
 
 	set_id (a_id: attached like alpha_anchor)
-			-- ??
+			-- `set_id' with non-empty `a_id'.
+		require
+			not_empty: not a_id.is_empty
 		do
 			id := a_id
 		ensure
 			set: id.same_string (a_id)
+			not_empty: not id.is_empty
 		end
 
 feature {NONE} -- Implementation: Type anchors
@@ -56,7 +66,11 @@ feature {NONE} -- Implementation: Type anchors
 	alpha_anchor: detachable STRING_32
 			-- `alpha_anchor' for things needing to be {STRING}.
 
-;note
+invariant
+	has_id: not id.is_empty
+	has_name: not name.is_empty
+	
+note
 	correctness_proof: "[
 		Attributes
 		==========
