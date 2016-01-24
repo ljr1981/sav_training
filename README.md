@@ -31,3 +31,15 @@ To add the environment variables on a Mac (or most Linux distros), follow the st
 	c. export ISE_EIFFEL="path to your Eiffel installation" (This is most likely in "/Applications/Macports/")
 
 5. Save the file by pressing Control+X then typing "y" and pressing ENTER when prompted to save the "Write Buffer"
+
+Targets
+=======
+The project has two "targets": "sav_training" and "test"
+
+Select and open the "test" target. Why?
+
+First—the "sav_training" target is a library target. It produces no executable, so there is no "program" to run. Yet, you DO want to run something, right?
+
+Second—the "test" target has tests (i.e. in the AutoTest tool) which you CAN and OUGHT to run! This is how we "prove" library code anyhow. This is very much like the standard "TDD model", where one is in an environment of "code + tests" and one runs the tests to prove the code. This makes a thing like the test target (operating on a library target) an excellent training playground sandbox!
+
+We will learn more about Eiffel project structures, targets, and how Eiffel compiles and organizes projects as we go. Until then—ENJOY!! :-)
