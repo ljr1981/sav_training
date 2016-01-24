@@ -99,6 +99,15 @@ feature -- Convention Examples
 
 	how_not_to_name_things
 			-- We do not generally include the class type of a thing in its name.
+		note
+			synopsis: "[
+				It is considered bad-form to put type names in the feature names.
+				Why? Because what if the type of the feature changes? Then the name
+				is no longer correct. Also--what if the feature name is polymorphic
+				assignment, where the actual attached object has a completely different
+				name? So--we want to name according to purpose (semantics) and not
+				data type.
+				]"
 		local
 			l_string: STRING -- does not tell the story of why `l_string' is here.
 			l_name: STRING -- tells a much better semantic story.
@@ -118,6 +127,14 @@ feature -- Convention Examples
 
 	quick_note_about_semi_colons
 			-- They are the rare exception
+		note
+			synopsis: "[
+				In Eiffel, we don't need semicolons at the end of lines.
+				We can use them, if needed, but the need for them is rare.
+				However, if you have a hard time breaking the habit, no worries--
+				Eiffel still accepts them (but we hope you'll be okay not typing
+				them!).
+				]"
 		local
 			this,is,no,good,nor,either,cuz,its,hard,too,read: BOOLEAN
 			we,dont,need,right,what,see,want: BOOLEAN
