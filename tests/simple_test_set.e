@@ -27,6 +27,7 @@ feature -- Test routines
 			-- New test routine
 		local
 			l_simple: SIMPLEST_BUT_NOT_VERY_USEFUL_CLASS
+			l_product: PRODUCT
 		do
 			do_nothing
 		end
