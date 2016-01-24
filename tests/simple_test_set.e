@@ -32,12 +32,14 @@ feature -- Test routines
 			l_conventions: CODING_CONVENTIONS
 		do
 			create l_product.make (["AB1000", "MADE UP PRODUCT NAME"])
+			
 			create l_loops
 			l_loops.across_and_from_can_be_combined
 			l_loops.basic_from_loop
 			l_loops.iterate_over_an_arrayed_list
 			l_loops.prevent_endless_loops
 			l_loops.the_loop_invariant
+
 			create l_conventions
 			l_conventions.andcamelcaseisnotmuchbetterreally.do_nothing
 			l_conventions.but_this_is_okay.do_nothing

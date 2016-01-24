@@ -137,7 +137,7 @@ feature -- Convention Examples
 				them!).
 				]"
 		local
-			this,is,no,good,nor,either,cuz,its,hard,too,read: BOOLEAN
+			this,is,no,good,nor,either,cuz,its,hard,too,to,read: BOOLEAN
 			we,dont,need,right,what,see,want: BOOLEAN
 		do
 				-- Cramming everything on one line is not really good form; hard to read ...
@@ -150,10 +150,10 @@ feature -- Convention Examples
 
 				-- Instead
 			what := we
-			want := too
+			want := to
 			see := is
 			this := cuz
-			its := good -- Everthing statement on its own line. Easier to ready, yes?
+			its := good -- Every statement on its own line. Easier to ready, yes?
 		end
 
 end
