@@ -1,5 +1,6 @@
 note
 	description: "An abstract notion of a general {PRODUCT}."
+	session: 1
 class
 	PRODUCT
 
@@ -69,7 +70,7 @@ feature {NONE} -- Implementation: Type anchors
 invariant
 	has_id: not id.is_empty
 	has_name: not name.is_empty
-	
+
 note
 	correctness_proof: "[
 		Attributes
@@ -88,7 +89,6 @@ note
 		Creations
 		=========
 		- Make with creation_objects, creates with necessary information.
-
 		]"
 	glossary: "A dictionary of terms"
 	term: "product",

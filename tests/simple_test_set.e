@@ -32,7 +32,7 @@ feature -- Test routines
 			l_conventions: CODING_CONVENTIONS
 		do
 			create l_product.make (["AB1000", "MADE UP PRODUCT NAME"])
-			
+
 			create l_loops
 			l_loops.across_and_from_can_be_combined
 			l_loops.basic_from_loop
@@ -53,6 +53,10 @@ feature -- Test routines
 			l_conventions.when_passing_arguments (100)
 		end
 
+feature {NONE} -- Implementation
+
+	session_docs: detachable SESSION_DOCS
+			-- To bring `session_docs' "in-system" (what does this mean? :-) )
 end
 
 
