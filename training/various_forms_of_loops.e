@@ -115,6 +115,7 @@ feature -- Across Loops
 
 	bertrand_example_2
 		note
+			EIS: "src=https://bertrandmeyer.com/2010/01/26/more-expressive-loops-for-eiffel/"
 			synopsis: "[
 				Computes Σ a [i], for i ranging from m to n, for an array (or other structure) a.
 				]"
@@ -127,6 +128,7 @@ feature -- Across Loops
 
 	bertrand_example_3
 		note
+			EIS: "src=https://bertrandmeyer.com/2010/01/26/more-expressive-loops-for-eiffel/"
 			synopsis: "[
 				Putting it in reverse
 				
@@ -145,6 +147,7 @@ feature -- Across Loops
 
 	bertrand_example_4
 		note
+			EIS: "src=https://bertrandmeyer.com/2010/01/26/more-expressive-loops-for-eiffel/"
 			synopsis: "[
 				Or you can use ... iterate over every third item.
 
