@@ -16,13 +16,50 @@ feature -- From Loops
 				]"
 		local
 			i: INTEGER
+			l_names: ARRAYED_LIST [STRING]
+			l_range: INTEGER_INTERVAL
 		do
+				-- First, simeple loop 1 .. 1_000
 			from i := 1
 			until i > 1_000
 			loop
 				print (i.out)
 				i := i + 1
 			end
+
+				-- Next, make a list to iterate ...
+			create l_names.make_from_array (<<"Fred", "Wilma", "Pebbles", "Barney", "Betty", "Bam-bam">>)
+											-- The << .. >> is referred to as a "manifest array", which means
+											-- the compiler sees the << as a signal telling it that an ARRAY is coming!
+											-- The >> signals the end of the ARRAY. The ".." items in the list
+											-- are a signal to the compiler that we have an ARRAY [STRING].
+											-- An ARRAY [CHARACTER] is: <<'a', 'b', 'c'>>
+											-- An ARRAY [INTEGER] is:	<<1, 2, 3, 4, 5>>
+											-- An ARRAY [BOOLEAN] is: 	<<True, False, True, True>>
+											-- An ARRAY [REAL] is: 		<<1.1, 2.7, 3.4, 5.1>>
+											-- In all cases << signals ARRAY and the manifest type signals the [G] of ARRAY [G]
+
+				-- Using a from-loop (like above) ...
+			from l_names.start -- Puts the cursor index at the first item (if there is one)
+			until l_names.off -- Iterate until the cursor index is after the last item (count + 1)
+			loop
+				print (l_names.item_for_iteration.out) -- The item we're on while iterating
+				l_names.forth -- Move the cursor index to the next item in the list (or off if we are at the end)
+			end
+
+				-- Next, a range might supply the upper and lower bounds (which is all we need)
+			from
+				l_range := 1 |..| 1_000
+				i := l_range.lower
+			until
+				i > l_range.upper
+			loop
+				-- do some loop stuff ...
+				i := i + 1
+			end
+
+			-- Yet ... the more interesting loops are the across variants of a loop
+			-- (NOTE: Eiffel really only has one loop structure, just separate variants)
 		end
 
 feature -- Across Loops
@@ -319,6 +356,12 @@ feature -- Loop Variant and Invariant
 				i := i - 2
 			variant
 				i
+			end
+				-- ... or ... you can just do it the Bertrand-way ... see `bertrand_example_4' except do "by-2" instead of 3.
+			across
+				(1 |..| 1_1000).new_cursor.reversed + 2 as c
+			loop
+				print (c.item)
 			end
 		end
 
