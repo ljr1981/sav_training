@@ -183,7 +183,9 @@ feature -- Across Loops
 				-- same as ...
 			across - s.new_cursor as c loop print (c.item) end
 				-- is this easier to read?
-			across (- s.new_cursor) as c loop print (c.item) end
+			across (- s.new_cursor) as c loop print (c.item) end -- minus sign replacement of `reversed' is make
+																-- 	possible due to: reversed alias "-": like Current
+																--	in {INDEXABLE_ITERATION_CURSOR}
 		end
 
 	bertrand_example_4

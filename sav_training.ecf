@@ -16,6 +16,7 @@
 		</option>
 		<library name="base" location="$ISE_LIBRARY\library\base\base-safe.ecf"/>
 		<library name="decimal" location="$ISE_EIFFEL\contrib\library\math\decimal\decimal\decimal-safe.ecf"/>
+		<library name="randomizer" location="$GitHub\randomizer\randomizer.ecf"/>
 		<library name="time" location="$ISE_LIBRARY\library\time\time-safe.ecf"/>
 		<cluster name="sav_training" location=".\" recursive="true"/>
 	</target>
