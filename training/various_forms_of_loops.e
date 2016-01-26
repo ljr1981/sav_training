@@ -180,6 +180,10 @@ feature -- Across Loops
 
 				-- Example 3
 			across s.new_cursor.reversed as c loop print (c.item) end
+				-- same as ...
+			across - s.new_cursor as c loop print (c.item) end
+				-- is this easier to read?
+			across (- s.new_cursor) as c loop print (c.item) end
 		end
 
 	bertrand_example_4
