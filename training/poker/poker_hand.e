@@ -14,7 +14,7 @@ feature -- Comparison
 	is_less alias "<" (a_other: like Current): BOOLEAN
 			-- <Precursor>
 		do
-			Result := hand_ranking < a_other.hand_ranking
+			Result := (is_full_hand and a_other.is_full_hand) and then (hand_ranking < a_other.hand_ranking)
 		end
 
 feature -- Access
@@ -289,8 +289,8 @@ feature {NONE} -- Implementation: Constants
 	second_card: INTEGER = 2
 	max_count: INTEGER = 5
 
-invariant
-	min_zero: min_count = 0
-	card_count: (min_count |..| max_count).has (cards.count)
+--invariant
+--	min_zero: min_count = 0
+--	card_count: (min_count |..| max_count).has (cards.count)
 
 end

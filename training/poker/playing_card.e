@@ -69,7 +69,7 @@ feature -- Comparison
 	is_less alias "<" (a_other: like Current): BOOLEAN
 			-- <Precursor>
 		do
-			Result := (suit_value (suit) < suit_value (a_other.suit)) or else value < a_other.value
+			Result := (suit_value (suit) < suit_value (a_other.suit)) and then value < a_other.value
 		end
 
 	suit_value (a_suit: like suit): INTEGER

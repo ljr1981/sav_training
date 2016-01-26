@@ -37,9 +37,9 @@ feature -- Test routines
 												l_deck_1.cards [ic.item].value /= l_deck_2.cards [ic.item].value
 											end)
 			create l_p1
-			create l_p1
+			create l_p2
 			across (1 |..| 5) as ic loop l_p1.cards.force (l_deck_1.cards [ic.item]) end
-			across (6 |..| 10) as ic loop l_p1.cards.force (l_deck_1.cards [ic.item]) end
+			across (6 |..| 10) as ic loop l_p2.cards.force (l_deck_1.cards [ic.item]) end
 		end
 
 end
