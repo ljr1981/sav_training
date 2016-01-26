@@ -93,9 +93,9 @@ feature -- Hand Ranking
 	is_four_of_a_kind: BOOLEAN
 			-- `is_straight_flush'?
 		local
-			l_suits: ARRAYED_LIST [INTEGER]
+			l_suits: HASH_TABLE [INTEGER, INTEGER]
 		do
-			create l_suits.make (4)
+			create l_suits.make (1000)
 			across cards as ic loop
 				l_suits [ic.item.suit.code] := l_suits [ic.item.suit.code] + 1
 			end
@@ -107,7 +107,7 @@ feature -- Hand Ranking
 	is_full_house: BOOLEAN
 			-- `is_straight_flush'?
 		local
-			l_values: ARRAYED_LIST [INTEGER]
+			l_values: HASH_TABLE [INTEGER, INTEGER]
 		do
 			create l_values.make (13)
 			across cards as ic loop

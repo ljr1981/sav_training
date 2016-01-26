@@ -90,6 +90,13 @@ feature -- Comparison
 feature -- Constants
 
 	duece: INTEGER = 1
+	three: INTEGER = 2
+	four: INTEGER = 3
+	five: INTEGER = 4
+	six: INTEGER = 5
+	seven: INTEGER = 6
+	eight: INTEGER = 7
+	nine: INTEGER = 8
 	ten: INTEGER = 9
 	jack: INTEGER = 10
 	queen: INTEGER = 11
