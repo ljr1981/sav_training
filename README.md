@@ -32,6 +32,12 @@ To add the environment variables on a Mac (or most Linux distros), follow the st
 
 5. Save the file by pressing Control+X then typing "y" and pressing ENTER when prompted to save the "Write Buffer"
 
+Dependencies
+============
+The project is now dependent on the randomizer library, which is a companion library on GitHub at:
+
+https://github.com/ljr1981/randomizer
+
 Targets
 =======
 The project has two "targets": "sav_training" and "test"
