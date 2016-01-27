@@ -7,8 +7,40 @@ note
 	EIS: "name=class_tool_quick_reference", "src=$GITHUB/sav_training/docs/Eiffel Studio - Class Tool - Quick Reference.pdf", "protocol=PDF"
 	eis_note: "The link above works because Eiffel Studio injects the path to the $GITHUB environment variable into the OS call for the PDF file."
 
-	session_notes: "[
-		Saturday, January 23rd, 2016
+	session_20150127: "[
+		Wednesday, January 27th, 2016 7:30 PM
+		- Planned
+			* Demo: Basic-text vs. Clickable-view and note references
+			* More on creation
+			* More on assignment (e.g. ":=" assignment operator) (see ECMA: 8.22.2 Syntax: Assignments)
+			* More on Void Safety and CAPs (Certified Attachment Patterns)
+			* More on Design by Contract (see ECMA: 8.9Correctness and contracts)
+			* More on code constructs: (see ECMA: 8.17 Control structures)
+				(1) Compounds (sequences)			(ECMA: 8.17.1 		Semantics: Compound (non-exception) semantics)
+				(2) Conditionals 					(ECMA: 8.17.2-6 	Syntax: Conditionals)
+				(3) Multi-branch instructions		(ECMA: 8.17.7-15 	Syntax: Multi-branch instructions)
+				(4) Loops							(ECMA: 8.17.16 		Syntax: Loops)
+				(5) Debug instructions				(ECMA: 8.17.18-19 	Syntax: Debug instructions)
+			* More on testing to prove library code
+			* More on "How Eiffel Compiles" (a look under the hood -- EIFGENs & Freeze/Melting-ice-tech)
+				Degree 6: Examining System			- Ensuring the project universe is well-formed and understood.
+				Degree 5: Parsing Classes			- Syntax is checked on all classes within universe.
+				Degree 4: Analyzing Inheritance		- Ensures valid/conforming inheritance structure.
+				Degree 3: Checking Types			- Ensures valid application of the Type-system.
+				Degree 2: Generating Byte Code		- "Byte-code" is "melted-code" for the Eiffel-runtime.
+				Degree 1: Generating Metadata		- "Metadata" is what allows the IDE to work with references (e.g. Pick-n-drop).
+				Melting System Changes				-
+
+				Eiffel Compilation Succeeded
+		- Created
+			* New classes for CAPS (e.g. {CERTIFIED_ATTACHMENT_PATTERNS} and {CAP_TEST_SET})
+			* "Poker" cluster under "training" - Demo of {COMPARABLE} using {PLAYING_CARD} and {POKER_HAND}
+			
+		]"
+	EIS: "src=https://www.eiffel.org/doc/eiffelstudio/How%%20EiffelStudio%%20Compiles"
+
+	session_20150123: "[
+		Saturday, January 23rd, 2016 9:00 AM
 		============================
 		- Create a simple class as "class CLASS_NAME end"
 		- Make it more interesting by adding "deferred" and discuss why it is more useful

@@ -13,6 +13,15 @@ feature -- Comparison
 
 	is_less alias "<" (a_other: like Current): BOOLEAN
 			-- <Precursor>
+		note
+			history: "[
+				(1) Use of the "and then" semi-strict Boolean comparator restricts application 
+				of the `hand_ranking' test to only those {POKER_HAND} objects that are both
+				`is_full_hand'. An attempt was made to use "implies", but implication logic
+				allows the `hand_ranking' part of the Boolean expression to be computed out
+				of turn, which results in (Current < Current) = True, which is an invariant
+				violation on {COMPARABLE}.
+				]"
 		do
 			Result := (is_full_hand and a_other.is_full_hand) and then (hand_ranking < a_other.hand_ranking)
 		end
