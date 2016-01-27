@@ -3,6 +3,7 @@ note
 
 	process: "As more sessions are added, put their notes at the TOP of the `session_notes' tag (below)."
 
+	EIS: "name=ecma_367_standard", "src=$GITHUB/sav_training/docs/ECMA-367.pdf"
 	EIS: "name=class_tool_quick_reference", "src=$GITHUB/sav_training/docs/Eiffel Studio - Class Tool - Quick Reference.pdf", "protocol=PDF"
 	eis_note: "The link above works because Eiffel Studio injects the path to the $GITHUB environment variable into the OS call for the PDF file."
 

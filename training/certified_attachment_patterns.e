@@ -2,11 +2,17 @@ note
 	description: "[
 		Examples of CAPs and CAP-able items
 		]"
-
+	glossary: "Dictionary of Terms"
+	term: "CAP",
+			"[
+				Certified Attachment Pattern is a pattern of code which can be statically
+				analyzed by a compiler where the result of the analysis will be a certification
+				that object references will never become Void (detached from an assigned object).
+				]"
 class
 	CERTIFIED_ATTACHMENT_PATTERNS
 
-feature -- CAPs
+feature -- Simple CAPs
 
 	simple_and_familiar
 		note
@@ -19,107 +25,55 @@ feature -- CAPs
 			end
 		end
 
+feature -- CAP-able Expressions
+
 	cap_able_expressions
 		note
 			EIS: "src=https://docs.eiffel.com/book/method/what-makes-certified-attachment-pattern#CAP-able_expressions"
-			synopsis: "[
-				In the first context in the definition above, the expression exp can be an Object-Test Local. 
-				An Object-Test Local is the identifier specified for a fresh local entity in an object test. 
-				Remember, object tests are coded using the attached syntax.
-				
-				            attached x as l_x 
-				
-				In the object test expression above, the identifier l_x is an Object-Test Local.
-				In the second context, the expression can be a read-only entity. Read-only entities are:
-				
-				Constant attributes
-				Formal arguments
-				Object-Test Locals
-				Current
-				
-				Additionally, the Eiffel Software compiler allows for stable attributes and local variables to 
-				be protected by a CAP.
-				]"
 		do
 			if attached my_stable_string as al_x then
 				do_nothing -- with `l_lx'
 			end
 		end
 
-	set_my_stable_string (a_string: attached like my_stable_string)
-			-- ???
-		do
-			my_stable_string := a_string
-		ensure
-			set: attached my_stable_string as al_string and then attached al_string
-		end
+feature -- Stable Attributes
 
-	my_stable_string: detachable ANY
+	my_stable_string: detachable STRING
 		note
 			EIS: "src=https://docs.eiffel.com/book/method/what-makes-certified-attachment-pattern#Stable_attributes"
 			synopsis: "[
-				Stable attributes are the only class attributes which are CAP-able. This is because 
-				stable attributes, once attached at run-time, can never have a void value again. So, 
-				you use stable attributes safely by using them under the protection of a CAP. Consider 
-				this stable attribute:
-				    
-				    my_stable_string: detachable STRING
-				        note
-				            option: stable
-				        attribute
-				        end
-				        
-				The detachable attribute my_stable_string, because it is stable, is not required to be 
-				initialized during the creation of instances of the class in which it is a feature. That 
-				means that for each instance, my_stable_string can be initialized later during the instance's 
-				life-cycle or not at all. But because it is detachable, my_stable_string cannot be accessed 
-				in any context in which it cannot be determined that it is currently attached. For ordinary 
-				attributes, this means either using an object test and accessing the object through an object 
-				test local, or using using a local variable under the protection of a CAP.
-				
-				Stable attributes however, can be used directly in a CAP, as shown below:
-				            
-				            if my_stable_string /= Void then
-				                my_stable_string.append ("abc")        -- Valid
-				                    ...
-				                    
-				So using stable attributes can reduce the need to initialize rarely used attributes, and the 
-				need to code object tests.
+				Stable attributes are the ONLY class attributes which are CAP-able!
+				This is because stable attributes, once attached at run-time, can never be Void again.
+				]"
+			usage: "[
+				(1) This feature does NOT require initialization (either in creation procedure 
+					or in "attribute .. end" (below))
+				(2) This feature can be initialized (attached to an object) at any time (or never).
+				(3) All access to this feature must happen using the Object Test Local method
+					(e.g. "if attached my_stable_string [as al_string] then .. end").
 				]"
             option: stable
         attribute
         end
 
-	local_variables
+	set_my_stable_string (a_string: attached like my_stable_string)
+			-- `set_my_stable_string' with `a_string' into `my_stable_string'.
 		note
 			synopsis: "[
-				Local variables can be used in a CAP as long as they are not the target of 
-				an assignment whose source is Void or some expression which could possibly 
-				be void.
-				
-				So, for a local variable l_string, the following is valid:
-				        
-				        local
-				            l_string: detachable STRING
-				        do
-				            if l_string /= Void then
-				                l_string.append ("abc")        -- Valid
-				                    ...
-				But, if l_string had been a target of an assignment in which the source could 
-				possibly have been void, then it could no longer be guaranteed that l_string 
-				is not void. So, assuming that my_detachable_string is an attribute declared 
-				as type detachable STRING, the second application of append in this example 
-				would be invalid:
-				        
-				        local
-				            l_string: detachable STRING
-				        do
-				            if l_string /= Void then
-				                l_string.append ("abc")        -- Valid
-				                l_string := my_detachable_string
-				                l_string.append ("xyz")        -- Invalid: my_detachable_string might have been void
-				                    ...
+				An example setter for a stable attribute. Note the "attached like"
+				in the argument type specification.
 				]"
+		do
+			my_stable_string := a_string
+		ensure
+			set: attached my_stable_string and then a_string.same_string (my_stable_string)
+		end
+
+feature -- Local Variable CAPs
+
+	local_variables
+		note
+			EIS: "src=https://docs.eiffel.com/book/method/what-makes-certified-attachment-pattern#Local_variables"
 		local
 			l_string: detachable STRING
 		do
@@ -133,35 +87,83 @@ feature -- CAPs
 			end
 		end
 
+feature -- Common CAPs
+
 	common_CAPs
-			-- ???
+			-- `common_CAPs' where a creation instruction can serve as a CAP.
 		note
+			EIS: "src=https://docs.eiffel.com/book/method/what-makes-certified-attachment-pattern#Common_CAPs"
 			synopsis: "[
-				Common CAPs
-				We've already seen the simple test for void as a CAP:
-				    local
-				        l_str: detachable STRING
-				 
-				                ...
-				 
-				            if l_str /= Void then
-				                l_str.append ("xyz")        -- Valid
-				            end
-				Additionally, a creation instruction can serve as a CAP. After the execution of a creation instruction, the target of the creation instruction will be attached:
-				        local
-				            l_str: detachable STRING
-				        do
-				            create l_str.make_empty
-				            l_str.append ("xyz")        -- Valid
-				                ...
+				In the example below, the compiler is smart enough to know that if there is code between
+				"create .." and any use of `l_str', that sets `l_str := Void' then the CAP is broken and
+				the compiler will complain (static analysis of the code).
 				]"
+			EIS: "name=ecma_367_standard", "src=$GITHUB/sav_training/docs/ECMA-367.pdf"
 		local
             l_str: detachable STRING
         do
             create l_str.make_empty
+            -- l_str := Void 			-- Uncomment this line of code and the compiler will generate an error:
+            							-- ECMA-367 Page 123 Section 8.23.14 VUTA(2) error (see EIS above).
+            							-- "An Object_call is target-valid if and only if its target is an attached expression."
             l_str.append ("xyz")        -- Valid	
 		end
 
+feature -- Less Obvious Cases
+
+	less_obvious_case_1
+			-- `less_obvious_case_1' of a CAP using a non-strict boolean operator.
+		note
+			EIS: "src=https://docs.eiffel.com/book/method/what-makes-certified-attachment-pattern#Less_obvious_cases"
+
+			see_also: "[
+				ECMA-367, page 128, sections 8.24.4 to 8.24.11, which covers the notions
+				of Boolean logic and how it combines with CAP (Certified Attachment Patterns).
+				]"
+				EIS: "name=ecma_367_standard", "src=$GITHUB/sav_training/docs/ECMA-367.pdf"
+
+			glossary: "Dictionary of Terms"
+			term: "non-strict",
+					"[
+					(1) Evaluation stops as soon as the truth or falsehood of the result is known. 
+						Therefore in some cases only the first operand will be evalutated by the runtime.
+						Also known as semi-strict (vs. strict). See EIS link below.
+					]"
+					EIS: "src=http://tecomp.sourceforge.net/index.php?file=doc/lang/basic.txt#chapter_6"
+		local
+			x: detachable STRING
+		do
+--			if x /= Void and x.is_empty then		-- Invalid because compiler does not transfer the CAP of x beyond the "and" (stict boolean operator)
+--				do_nothing							-- ECMA-367 Page 123 Section 8.23.14 VUTA(2) error (see EIS above).
+--			end										-- "An Object_call is target-valid if and only if its target is an attached expression."
+			if x /= Void and then x.is_empty then	-- Valid because the compiler transfers the CAP-status of x through the semi-strict boolean operator
+				do_nothing
+			end
+		end
+
+	CAPs_and_logical_implication
+			-- `CAPs_and_logical_implication' and the "implies" Boolean operator.
+		note
+			synopsis: "[
+				Similar to the other semi-strict Boolean operators, logical implication
+				works with the compiler to transfer the CAP logically through to other
+				code within the code. In the example below, the else-part of the if-then
+				is logically attached unless code is introduced that sets l_str to Void.
+				]"
+			EIS: "src=https://docs.eiffel.com/book/method/what-makes-certified-attachment-pattern#Less_obvious_cases"
+		local
+			l_str: detachable STRING
+		do
+			if l_str /= Void implies some_expression then
+				do_nothing
+			else
+				-- l_str := Void					-- Will cause an attachment error if uncommented.
+				l_str.append ("xyz")				-- Valid because the "implies" Boolean operator is semi-strict and ..
+			end
+		end
+
+	some_expression: BOOLEAN
+			-- `some_expression' in support of `CAPs_and_logical_implication'.
 
 ;note
 	glossary: "Dictionary of Terms"
