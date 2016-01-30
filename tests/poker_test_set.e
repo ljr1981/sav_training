@@ -2,9 +2,7 @@ note
 	description: "[
 		Eiffel tests that can be executed by testing tool.
 	]"
-	author: "EiffelStudio test wizard"
-	date: "$Date$"
-	revision: "$Revision$"
+	EIS: "name=poker_rules", "src=$GITHUB/sav_training/docs/ECMA-367.pdf"
 	testing: "type/manual"
 
 class

@@ -5,10 +5,11 @@ note
 
 	EIS: "name=ecma_367_standard", "src=$GITHUB/sav_training/docs/ECMA-367.pdf"
 	EIS: "name=class_tool_quick_reference", "src=$GITHUB/sav_training/docs/Eiffel Studio - Class Tool - Quick Reference.pdf", "protocol=PDF"
+	EIS: "name=comprehensive_eiffel_syntax_guide", "src=http://eiffel-guide.com/"
 	eis_note: "The link above works because Eiffel Studio injects the path to the $GITHUB environment variable into the OS call for the PDF file."
 
-	session_20150127: "[
-		Wednesday, January 27th, 2016 7:30 PM
+	session_20150130: "[
+		Saturday, January 30th, 2016 9:00 AM
 		- Planned
 			* Demo: Basic-text vs. Clickable-view and note references
 			* More on creation
@@ -35,7 +36,12 @@ note
 		- Created
 			* New classes for CAPS (e.g. {CERTIFIED_ATTACHMENT_PATTERNS} and {CAP_TEST_SET})
 			* "Poker" cluster under "training" - Demo of {COMPARABLE} using {PLAYING_CARD} and {POKER_HAND}
-			
+		- Eiffel Studio Setups
+			* Pick-n-Drop: use the following steps to set PnD:
+				(1) From the menu: Tools -> Preferences
+				(2) Click the "Flat View" button
+				(3) Type "pick" in the "Filter" textbox
+				(4) Change the PnD option from False -> True
 		]"
 	EIS: "src=https://www.eiffel.org/doc/eiffelstudio/How%%20EiffelStudio%%20Compiles"
 
