@@ -8,6 +8,16 @@ note
 	EIS: "name=comprehensive_eiffel_syntax_guide", "src=http://eiffel-guide.com/"
 	eis_note: "The link above works because Eiffel Studio injects the path to the $GITHUB environment variable into the OS call for the PDF file."
 
+	EIS: "name=training_video_ECMA", "src=https://www.youtube.com/watch?v=RDSPBQX7EY8"
+	EIS: "name=training_video_prefs", "src=https://www.youtube.com/watch?v=pNP1hBfkwx4"
+	EIS: "name=training_video_notes", "src=https://www.youtube.com/watch?v=rAKOD2-l7E8"
+	EIS: "name=training_video_creation", "src=https://www.youtube.com/watch?v=o0YYfmWURY4"
+	EIS: "name=training_video_debug", "src=https://www.youtube.com/watch?v=H-SKuaw4ttg"
+	EIS: "name=training_video_anchors", "src=https://www.youtube.com/watch?v=eNppFYmvj_I"
+	EIS: "name=training_video_attributes", "src=https://www.youtube.com/watch?v=GIxTuLGSXbA"
+	EIS: "name=training_video_combined", "src=https://www.youtube.com/watch?v=GIxTuLGSXbA"
+	EIS: "name=training_video_setters", "src=https://www.youtube.com/watch?v=PD5Iqxd2YLU"
+
 	session_20150130: "[
 		Saturday, January 30th, 2016 9:00 AM
 		- Planned
