@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "A place to put notes and documentation related to Training Sessions."
 
 	process: "As more sessions are added, put their notes at the TOP of the `session_notes' tag (below)."
@@ -90,4 +90,76 @@ note
 deferred class
 	SESSION_DOCS
 
+note
+	various_language_specifications: "[
+		Specification documents for various languages
+		=============================================
+		
+		There are a wide range of specifications for programming languages
+		(especially the ones most used according to the Tiobe Index). The
+		following notes represent a link to either a local PDF document or
+		to some web resoure URL/URI. The number of pages is included to 
+		provide some sense of scope. For eample, C++ with its 1,359 pages
+		down to Python with 1 (possibly 2, depending on how you print it).
+		
+		If one spends a little time casually browsing these specifications,
+		it ought to become obvious how each specification is alike and how
+		they differ. The common programmer will (no doubt) be incredibly
+		lost in a sea of technical jargon that seems largely targeted at
+		language designers and not of much value to the average programmer.
+		
+		However, if you read the rest and then begin reading the Eiffel
+		specification, one ought to quickly realize how helpful and learnable
+		the specification is (in relative comparison). Nevertheless, it is
+		precisely this form of understanding and reading that quickly
+		propels a reader and student of these languages to mastery of them.
+		Why? Because the compiler (parser, lexer, etc.) is built based on
+		these logical constructions and rules. Understanding the rules
+		translates instantly to a deep understanding to the language tool.
+		
+		Therefore—reading, understanding, and learning your language
+		specification is a powerful tool with powerful rewards for those
+		who take the time to read, learn, and understand as well as they
+		can.
+		]"
+
+	top_ten_tiobe_index: "[
+Jan 2016	Jan 2015	Change	Programming Language	Ratings	Change
+1			2			change	Java					21.465%	+5.94%
+2			1			change	C						16.036%	-0.67%
+3			4			change	C++						6.914%	+0.21%
+4			5			change	C#						4.707%	-0.34%
+5			8			change	Python					3.854%	+1.24%
+6			6					PHP						2.706%	-1.08%
+7			16			change	Visual Basic .NET		2.582%	+1.51%
+8			7			change	JavaScript				2.565%	-0.71%
+9			14			change	Assembly language		2.095%	+0.92%
+10			15			change	Ruby					2.047%	+0.92%
+		]"
+			EIS: "src=http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html"
+
+	C: 		"pages=", 538
+			EIS: "src=$GITHUB/sav_training/docs/n1124.pdf"
+
+	Cpp:	"pages=", 1_359
+			EIS: "src=$GITHUB/sav_training/docs/n3690.pdf"
+
+	csharp: "pages=", 513
+			EIS: "src=$GITHUB/sav_training/docs/CSharp Language Specification.pdf"
+
+	eiffel: "pages=", 174
+			EIS: "name=ecma_367_standard", "src=$GITHUB/sav_training/docs/ECMA-367.pdf"
+
+	java: 	"pages=", 768
+			EIS: "src=$GITHUB/sav_training/docs/jls8.pdf"
+
+	php: 	"pages=", 167
+			EIS: "src=https://github.com/php/php-langspec/blob/a610388d637b67294925d3b1dbbc0a54b7d94428/spec/php-spec-draft.md#grammars"
+			EIS: "src=$GITHUB/sav_training/docs/php-langspec_php-spec-draft.pdf"
+
+	python: "pages=", 1
+			EIS: "src=https://docs.python.org/2/reference/grammar.html"
+
+	ruby: 	"pages=", 311
+			EIS: "src=$GITHUB/sav_training/docs/000011432.pdf"
 end
