@@ -17,6 +17,7 @@
 	EIS: "name=training_video_attributes", "src=https://www.youtube.com/watch?v=GIxTuLGSXbA"
 	EIS: "name=training_video_combined", "src=https://www.youtube.com/watch?v=GIxTuLGSXbA"
 	EIS: "name=training_video_setters", "src=https://www.youtube.com/watch?v=PD5Iqxd2YLU"
+	EIS: "name=training_video_feature_groups", "src=https://www.youtube.com/watch?v=ryLLts_OKgQ"
 
 	session_20160203: "[
 		Wednesday, February 3rd, 2016 7:30 AM
