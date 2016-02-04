@@ -18,7 +18,14 @@
 	EIS: "name=training_video_combined", "src=https://www.youtube.com/watch?v=GIxTuLGSXbA"
 	EIS: "name=training_video_setters", "src=https://www.youtube.com/watch?v=PD5Iqxd2YLU"
 
-	session_20150130: "[
+	session_20160203: "[
+		Wednesday, February 3rd, 2016 7:30 AM
+		- Planned
+			*
+		]"
+	EIS: "name=comprehensive_eiffel_syntax_guide", "src=http://eiffel-guide.com/"
+
+	session_20160130: "[
 		Saturday, January 30th, 2016 9:00 AM
 		- Planned
 			* Demo: Basic-text vs. Clickable-view and note references
@@ -55,7 +62,7 @@
 		]"
 	EIS: "src=https://www.eiffel.org/doc/eiffelstudio/How%%20EiffelStudio%%20Compiles"
 
-	session_20150123: "[
+	session_20160123: "[
 		Saturday, January 23rd, 2016 9:00 AM
 		============================
 		- Create a simple class as "class CLASS_NAME end"
