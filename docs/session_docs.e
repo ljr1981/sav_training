@@ -21,7 +21,31 @@
 	session_20160203: "[
 		Wednesday, February 3rd, 2016 7:30 AM
 		- Planned
-			*
+			* Feature groups - Theory to Implementation (Language-X)
+				- Simple class (e.g. class VEHICLE end)
+				- Add empty feature groups
+				- Add feature group names (comments)
+				- Add features (engine, transmission, ...)
+				- Add feature group clients
+				- Compare/Contrast w/"public", "private", "hidden", etc.
+			* Creation - Theory to Implementation (Language-X)
+				- Creation theory (Pancake recipe theory)
+				- More than one recipe, but just one notion of PANCAKE
+				- 1-notion-having-many-creation-recipes-is-OKAY!
+				- init (int pancakeCreationCode, int CreatorCode);
+				- vs.
+				- class PANCAKE
+
+					create {HOME_BREW}
+					  make_deairas_method,
+					  make_brads_method,
+					  make_bradleys_method,
+					  make_michaels_method,
+					  make_larrys_method
+
+					create {CHEFS}
+					  make_alton_brown_method,
+					  make_gordon_ramsey
 		]"
 	EIS: "name=comprehensive_eiffel_syntax_guide", "src=http://eiffel-guide.com/"
 
