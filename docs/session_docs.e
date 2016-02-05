@@ -30,6 +30,8 @@
 				- Add feature group clients
 				- Compare/Contrast w/"public", "private", "hidden", etc.
 			* Creation - Theory to Implementation (Language-X)
+				- All languages have the notion of "creation"
+				- Creation happens from a set of plans: Class
 				- Creation theory (Pancake recipe theory)
 				- More than one recipe, but just one notion of PANCAKE
 				- 1-notion-having-many-creation-recipes-is-OKAY!
@@ -49,7 +51,18 @@
 					  make_gordon_ramsey
 		]"
 	EIS: "name=comprehensive_eiffel_syntax_guide", "src=http://eiffel-guide.com/"
-
+	EIS: "name=official_oracle_java_constructor", "src=https://docs.oracle.com/javase/tutorial/java/javaOO/constructors.html"
+	EIS: "name=java_constructor_complete_study", "src=http://beginnersbook.com/2013/03/constructors-in-java/"
+	EIS: "name=understanding_java_constructors", "src=http://www.javaworld.com/article/2076204/core-java/understanding-constructors.html"
+	overall_reality_of_java_rules: "[
+		The Java rules to object creation are irrational contrivances, where a
+		constrivance is a device, especially in literary or artistic composition, 
+		that gives a sense of artificiality. Therefore, the Java rules for object
+		creation are artificial.
+		]"
+	EIS: "src=http://stackoverflow.com/questions/22627038/constructor-name-and-class-name-are-the-same-in-java-why"
+	answer: "There is NO RATIONAL or LOGICAL reason for the Java constructor rules!"
+	
 	session_20160130: "[
 		Saturday, January 30th, 2016 9:00 AM
 		- Planned
