@@ -50,6 +50,7 @@
 					  make_alton_brown_method,
 					  make_gordon_ramsey
 		]"
+	EIS: "name=ecma_object_creation", "src=$GITHUB/sav_training/docs/object_creation.pdf"
 	EIS: "name=comprehensive_eiffel_syntax_guide", "src=http://eiffel-guide.com/"
 	EIS: "name=official_oracle_java_constructor", "src=https://docs.oracle.com/javase/tutorial/java/javaOO/constructors.html"
 	EIS: "name=java_constructor_complete_study", "src=http://beginnersbook.com/2013/03/constructors-in-java/"
@@ -62,7 +63,7 @@
 		]"
 	EIS: "src=http://stackoverflow.com/questions/22627038/constructor-name-and-class-name-are-the-same-in-java-why"
 	answer: "There is NO RATIONAL or LOGICAL reason for the Java constructor rules!"
-	
+
 	session_20160130: "[
 		Saturday, January 30th, 2016 9:00 AM
 		- Planned
