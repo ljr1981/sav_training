@@ -3,7 +3,7 @@
 	MVC: "[
 		Model-View-Controller Example in Eiffel
 		=======================================
-		
+
 
 		]"
 class
@@ -38,10 +38,10 @@ feature {NONE} -- Initialization
 		do
 			Precursor
 			button_a.set_text ("Button A")
-			button_a.select_actions.extend (agent on_button_click ("Pressed A button"))
+			button_a.select_actions.extend (agent display_information ("Pressed A button"))
 
 			button_b.set_text ("Button B")
-			button_b.select_actions.extend (agent on_button_click ("Pressed B button"))
+			button_b.select_actions.extend (agent display_information ("Pressed B button"))
 
 			main_box.extend (button_a)
 			main_box.extend (button_b)
@@ -52,15 +52,15 @@ feature {NONE} -- Initialization
 			extend (main_box)
 
 			create l_buffer
-			l_buffer.set_with_named_file (".\images\thick.png")
+			l_buffer.set_with_named_file (".\images\meetup.png")
 			create l_icon.make_with_pixel_buffer (l_buffer)
 			set_icon_pixmap (l_icon)
 		end
 
 feature {NONE} -- Implementation: Event Handlers
 
-	on_button_click (a_message: STRING)
-			-- ???
+	display_information (a_message: STRING)
+			-- `display_information' in `a_message' on the screen.
 		local
 			l_dialog: EV_INFORMATION_DIALOG
 		do
