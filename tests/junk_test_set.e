@@ -1,10 +1,7 @@
 note
 	description: "[
-		Eiffel tests that can be executed by testing tool.
+		Tests for "junk" classes as-needed.
 	]"
-	author: "EiffelStudio test wizard"
-	date: "$Date$"
-	revision: "$Revision$"
 	testing: "type/manual"
 
 class
@@ -12,6 +9,14 @@ class
 
 inherit
 	EQA_TEST_SET
+		rename
+			assert as assert_old
+		end
+
+	EQA_COMMONLY_USED_ASSERTIONS
+		undefine
+			default_create
+		end
 
 feature -- Test routines
 
@@ -20,7 +25,9 @@ feature -- Test routines
 		local
 			l_point: JAVA_POINT
 		do
-			assert ("not_implemented", False)
+			create l_point.make_at_origin
+			create l_point.make_at_x_y (10, 20)
+			create l_point.make_with_companion (create {JAVA_POINT}.make_at_origin)
 		end
 
 end
