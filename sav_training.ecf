@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<system xmlns="http://www.eiffel.com/developers/xml/configuration-1-15-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-15-0 http://www.eiffel.com/developers/xml/configuration-1-15-0.xsd" name="sav_sem_class" uuid="E6D164C6-ABDD-4B57-82F5-BC96C0FD3615" library_target="sav_training">
+<system xmlns="http://www.eiffel.com/developers/xml/configuration-1-15-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-15-0 http://www.eiffel.com/developers/xml/configuration-1-15-0.xsd" name="sav_training" uuid="E6D164C6-ABDD-4B57-82F5-BC96C0FD3615" library_target="sav_training">
 	<description>Savannah Software Engineering Meetup Class Training Example</description>
 	<target name="sav_training">
 		<root all_classes="true"/>
@@ -18,6 +18,7 @@
 		<library name="decimal" location="$ISE_EIFFEL\contrib\library\math\decimal\decimal\decimal-safe.ecf"/>
 		<library name="randomizer" location="$GitHub\randomizer\randomizer.ecf"/>
 		<library name="time" location="$ISE_LIBRARY\library\time\time-safe.ecf"/>
+		<library name="vision2" location="$ISE_LIBRARY\library\vision2\vision2-safe.ecf"/>
 		<cluster name="sav_training" location=".\" recursive="true"/>
 	</target>
 	<target name="test" extends="sav_training">
@@ -33,5 +34,18 @@
 		<setting name="console_application" value="true"/>
 		<library name="testing" location="$ISE_LIBRARY\library\testing\testing-safe.ecf"/>
 		<cluster name="tests" location=".\tests\" recursive="true"/>
+	</target>
+	<target name="mvc_window" extends="sav_training">
+		<description>An example of MVC using Eiffel Vision library to make a window</description>
+		<root cluster="sav_training" class="APPLICATION" feature="make"/>
+		<file_rule>
+			<exclude>/EIFGENs$</exclude>
+			<exclude>/CVS$</exclude>
+			<exclude>/.svn$</exclude>
+			<exclude>/.git$</exclude>
+			<exclude>/Documentation$</exclude>
+			<exclude>/tests$</exclude>
+		</file_rule>
+		<cluster name="sav_training_mvc" location="$GITHUB\sav_training\sav_training_mvc\" recursive="false"/>
 	</target>
 </system>

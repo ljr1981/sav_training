@@ -19,6 +19,21 @@
 	EIS: "name=training_video_setters", "src=https://www.youtube.com/watch?v=PD5Iqxd2YLU"
 	EIS: "name=training_video_feature_groups", "src=https://www.youtube.com/watch?v=ryLLts_OKgQ"
 
+	session_20160206: "[
+		Saturday, February 6th, 2016 8:00 AM
+		- Planned
+			* Creation - Forms of
+				- (1) `default_create' (2) one-to-many creation procedures
+				- Eif: {ANY} `default_create' v. Java: "no-arg constructor" (see: Oracle tutorial)
+				- Orthogonal: Arguments v. Procedures (how does this look in Java?)
+					- max arg count = 4 (Eiffel Inspector)
+					- class/feature too complex - refactor (more classes, more creators)
+				- TUPLEs v. ARRAY as arguments (notion of compiler spoofing)
+				- "compiler spoofing" arg count wrapped in run-time semantic where compiler cannot see
+				- Argument anchoring (`creation_objects_anchor')
+				-
+		]"
+
 	session_20160203: "[
 		Wednesday, February 3rd, 2016 7:30 AM
 		- Planned
