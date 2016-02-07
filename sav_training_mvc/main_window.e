@@ -1,3 +1,11 @@
+﻿note
+	EIS: "name=MVC", "src=$GITHUB/sav_training/docs/Model–view–controller.pdf"
+	MVC: "[
+		Model-View-Controller Example in Eiffel
+		=======================================
+		
+
+		]"
 class
 	MAIN_WINDOW
 
@@ -24,6 +32,9 @@ feature {NONE} -- Initialization
 
 	initialize
 			-- <Precursor>
+		local
+			l_icon: EV_PIXMAP
+			l_buffer: EV_PIXEL_BUFFER
 		do
 			Precursor
 			button_a.set_text ("Button A")
@@ -37,8 +48,13 @@ feature {NONE} -- Initialization
 
 			main_box.set_padding (3)
 			main_box.set_border_width (3)
-			
+
 			extend (main_box)
+
+			create l_buffer
+			l_buffer.set_with_named_file (".\images\thick.png")
+			create l_icon.make_with_pixel_buffer (l_buffer)
+			set_icon_pixmap (l_icon)
 		end
 
 feature {NONE} -- Implementation: Event Handlers

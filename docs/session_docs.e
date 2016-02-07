@@ -1,12 +1,20 @@
 ﻿note
-	description: "A place to put notes and documentation related to Training Sessions."
+	description: "[
+		A place to put notes and documentation related to Training Sessions.
+		]"
 
-	process: "As more sessions are added, put their notes at the TOP of the `session_notes' tag (below)."
+	process: "[
+		As more sessions are added, put their notes at the TOP 
+		of the `session_notes' tag (below).
+		]"
 
 	EIS: "name=ecma_367_standard", "src=$GITHUB/sav_training/docs/ECMA-367.pdf"
 	EIS: "name=class_tool_quick_reference", "src=$GITHUB/sav_training/docs/Eiffel Studio - Class Tool - Quick Reference.pdf", "protocol=PDF"
 	EIS: "name=comprehensive_eiffel_syntax_guide", "src=http://eiffel-guide.com/"
-	eis_note: "The link above works because Eiffel Studio injects the path to the $GITHUB environment variable into the OS call for the PDF file."
+	eis_note: "[
+		The link above works because Eiffel Studio injects the path to the $GITHUB 
+		environment variable into the OS call for the PDF file.
+		]"
 
 	EIS: "name=training_video_ECMA", "src=https://www.youtube.com/watch?v=RDSPBQX7EY8"
 	EIS: "name=training_video_prefs", "src=https://www.youtube.com/watch?v=pNP1hBfkwx4"
@@ -28,11 +36,20 @@
 				- Orthogonal: Arguments v. Procedures (how does this look in Java?)
 					- max arg count = 4 (Eiffel Inspector)
 					- class/feature too complex - refactor (more classes, more creators)
-				- TUPLEs v. ARRAY as arguments (notion of compiler spoofing)
-				- "compiler spoofing" arg count wrapped in run-time semantic where compiler cannot see
-				- Argument anchoring (`creation_objects_anchor')
-				-
+		- Unplanned
+			* MVC (Model-View-Controller) Example using Eiffel Vision
+				- Explain MVC as a "higher concept" (not a particular language implementation)
+				- Build Windows app in Eiffel using MVC
+				- Model: EV_APPLICATION - The event loop
+				- View: EV_TITLED_WINDOW - The core visual container
+				- Controller: Agents (functions wrapped as objects)
+				- Agent queues (action queues)
+		- Next
+			- TUPLEs v. ARRAY as arguments (notion of compiler spoofing)
+			- "compiler spoofing" arg count wrapped in run-time semantic where compiler cannot see
+			- Argument anchoring (`creation_objects_anchor')
 		]"
+		EIS: "name=MVC", "src=$GITHUB/sav_training/docs/Model–view–controller.pdf"
 
 	session_20160203: "[
 		Wednesday, February 3rd, 2016 7:30 AM
