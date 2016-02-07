@@ -34,18 +34,21 @@ To add the environment variables on a Mac (or most Linux distros), follow the st
 
 Dependencies
 ============
-The project is now dependent on the randomizer library, which is a companion library on GitHub at:
+The project is now dependent on two or more libaries:
 
-https://github.com/ljr1981/randomizer
+(1) Randomizer library -- a companion library on GitHub at: https://github.com/ljr1981/randomizer
+(2) Test set helper library -- another companion library on GitHub at: https://github.com/ljr1981/test_set_helper
 
 Targets
 =======
-The project has two "targets": "sav_training" and "test"
+The project has three "targets": "sav_training", "test", and "sav_training_mvc"
 
 Select and open the "test" target. Why?
 
 First—the "sav_training" target is a library target. It produces no executable, so there is no "program" to run. Yet, you DO want to run something, right?
 
 Second—the "test" target has tests (i.e. in the AutoTest tool) which you CAN and OUGHT to run! This is how we "prove" library code anyhow. This is very much like the standard "TDD model", where one is in an environment of "code + tests" and one runs the tests to prove the code. This makes a thing like the test target (operating on a library target) an excellent training playground sandbox!
+
+The third target is one you can open and discover how Eiffel used MVC within the visual components paradigm (e.g. how Eiffel Vision uses agents as controllers operating with visual and model elements).
 
 We will learn more about Eiffel project structures, targets, and how Eiffel compiles and organizes projects as we go. Until then—ENJOY!! :-)
