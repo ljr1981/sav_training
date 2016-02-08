@@ -22,7 +22,7 @@
 		<library name="randomizer" location="$GitHub\randomizer\randomizer.ecf"/>
 		<library name="time" location="$ISE_LIBRARY\library\time\time-safe.ecf"/>
 		<library name="vision2" location="$ISE_LIBRARY\library\vision2\vision2-safe.ecf"/>
-		<library name="wsf" location="C:\Users\Larry_2\Documents\GitHub\Eiffel-Web-Framework\library\server\wsf\wsf-safe.ecf"/>
+		<library name="wsf" location="$GITHUB\Eiffel-Web-Framework\library\server\wsf\wsf-safe.ecf"/>
 		<cluster name="sav_training" location=".\" recursive="true"/>
 	</target>
 	<target name="test" extends="sav_training">
