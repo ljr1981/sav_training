@@ -16,9 +16,13 @@
 		</option>
 		<library name="base" location="$ISE_LIBRARY\library\base\base-safe.ecf"/>
 		<library name="decimal" location="$ISE_EIFFEL\contrib\library\math\decimal\decimal\decimal-safe.ecf"/>
+		<library name="default_nino" location="$GITHUB\Eiffel-Web-Framework\library\server\wsf\default\nino-safe.ecf"/>
+		<library name="encoder" location="$GITHUB\Eiffel-Web-Framework\library\text\encoder\encoder-safe.ecf"/>
+		<library name="http" location="$GITHUB\Eiffel-Web-Framework\library\network\protocol\http\http-safe.ecf"/>
 		<library name="randomizer" location="$GitHub\randomizer\randomizer.ecf"/>
 		<library name="time" location="$ISE_LIBRARY\library\time\time-safe.ecf"/>
 		<library name="vision2" location="$ISE_LIBRARY\library\vision2\vision2-safe.ecf"/>
+		<library name="wsf" location="C:\Users\Larry_2\Documents\GitHub\Eiffel-Web-Framework\library\server\wsf\wsf-safe.ecf"/>
 		<cluster name="sav_training" location=".\" recursive="true"/>
 	</target>
 	<target name="test" extends="sav_training">
@@ -46,6 +50,25 @@
 			<exclude>/Documentation$</exclude>
 			<exclude>/tests$</exclude>
 		</file_rule>
-		<cluster name="sav_training_mvc" location="$GITHUB\sav_training\sav_training_mvc\" recursive="false"/>
+		<cluster name="sav_training_mvc" location="$GITHUB\sav_training\sav_training_mvc\"/>
+	</target>
+	<target name="web_simple" extends="sav_training">
+		<description>Savannah Software Engineering Meetup Training - Simple Web Site</description>
+		<root cluster="sav_training" class="SIMPLE_WEB" feature="make_and_launch"/>
+		<file_rule>
+			<exclude>/EIFGENs$</exclude>
+			<exclude>/CVS$</exclude>
+			<exclude>/.svn$</exclude>
+			<exclude>/.git$</exclude>
+			<exclude>/Documentation$</exclude>
+			<exclude>/tests$</exclude>
+		</file_rule>
+		<cluster name="sav_training_web_simple" location="$GITHUB\sav_training\sav_training_web_simple\"/>
+	</target>
+	<target name="test_web_simple" extends="sav_training">
+		<description>Tests for web_simple target.</description>
+		<root cluster="sav_training" class="SIMPLE_WEB" feature="make_and_launch"/>
+		<library name="testing" location="$ISE_LIBRARY\library\testing\testing-safe.ecf"/>
+		<cluster name="tests" location=".\sav_training_web_simple\tests\" recursive="true"/>
 	</target>
 </system>
