@@ -36,8 +36,9 @@ Dependencies
 ============
 The project is now dependent on two or more libaries:
 
-(1) Randomizer library -- a companion library on GitHub at: https://github.com/ljr1981/randomizer
-(2) Test set helper library -- another companion library on GitHub at: https://github.com/ljr1981/test_set_helper
+(1) Randomizer            @ https://github.com/ljr1981/randomizer
+(2) Test set helper       @ https://github.com/ljr1981/test_set_helper
+(3) Eiffel Web Framework  @ https://github.com/Eiffel-World/Eiffel-Web-Framework
 
 Targets
 =======
