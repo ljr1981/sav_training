@@ -5,16 +5,36 @@
 				and from WSF_ROUTED_URI_TEMPLATE_HELPER to use help feature to map
 					uri-template routes
 			]"
+	EIS: "name=WikiPedia_URI", "src=https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+	EIS: "name=WikiPedia_URL_Template", "src=https://en.wikipedia.org/wiki/URL_Template"
+	EIS: "name=Request_for_Comments_6570", "src=http://tools.ietf.org/html/rfc6570"
+
+	glossary: "Dictionary of Terms"
+	term_uri_specification: "[
+		scheme:[//[user:password@]host[:port]][/]path[?query][#fragment]
+		
+				                    hierarchical part
+		        ┌───────────────────┴─────────────────────┐
+		                    authority               path
+		        ┌───────────────┴───────────────┐┌───┴────┐
+		  abc://username:password@example.com:123/path/data?key=value#fragid1
+		  └┬┘   └───────┬───────┘ └────┬────┘ └┬┘           └───┬───┘ └──┬──┘
+		scheme  user information     host     port            query   fragment
+
+		  urn:example:mammal:monotreme:echidna
+		  └┬┘ └──────────────┬───────────────┘
+		scheme              path
+		]"
 
 class
 	HELLO_EXECUTION
 
 inherit
-	WSF_ROUTED_EXECUTION
+	WSF_ROUTED_EXECUTION 				-- Execution based on router.
 
-	WSF_ROUTED_URI_HELPER
+	WSF_ROUTED_URI_HELPER 				-- Adds URI base routing to a routed object.
 
-	WSF_ROUTED_URI_TEMPLATE_HELPER
+	WSF_ROUTED_URI_TEMPLATE_HELPER		-- Adds URI template-based routing to a routed object.
 
 create
 	make
@@ -22,6 +42,40 @@ create
 feature {NONE} -- Initialization
 
 	setup_router
+		note
+			methods: "[
+				HTTP methods: HEAD, GET, POST
+				
+				GET (Resource_data -> Browser)
+				------------------------------
+				The GET method requests a representation of the specified resource. Requests using 
+				GET should only retrieve data and should have no other effect. (This is also true of 
+				some other HTTP methods.)[1] The W3C has published guidance principles on this distinction, 
+				saying, "Web application design should be informed by the above principles, but also 
+				by the relevant limitations."[13] See safe methods below.
+
+				HEAD ((Resource_data - body) -> Browser)
+				----------------------------------------
+				The HEAD method asks for a response identical to that of a GET request, but without 
+				the response body. This is useful for retrieving meta-information written in response 
+				headers, without having to transport the entire content.
+
+				POST (Browser_data -> Post_as_sub_of_resource)
+				----------------------------------------------
+				The POST method requests that the server accept the entity enclosed in the request 
+				as a new subordinate of the web resource identified by the URI. The data POSTed might 
+				be, for example, an annotation for existing resources; a message for a bulletin board, 
+				newsgroup, mailing list, or comment thread; a block of data that is the result of 
+				submitting a web form to a data-handling process; or an item to add to a database.[14]
+
+				PUT (Browser_data -> Put_as_new_or_edited_resource)
+				---------------------------------------------------
+				The PUT method requests that the enclosed entity be stored under the supplied URI. 
+				If the URI refers to an already existing resource, it is modified; if the URI does 
+				not point to an existing resource, then the server can create the resource with 
+				that URI.[15]
+				]"
+			EIS: "src=https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods"
 		do
 			map_uri_agent ("/hello", agent execute_hello (?, ?), Void)
 			map_uri_template ("/users/{user}/message/{mesgid}", create {USER_MESSAGE_HANDLER}, router.methods_HEAD_GET_POST)
