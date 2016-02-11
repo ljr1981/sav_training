@@ -147,7 +147,13 @@ feature -- Across Loops
 			bertrand_example_prep_work
 
 				-- Example 1
-	        across s as c from sum := 0  loop sum := sum + c.cursor_index * c.item.code end -- NOTE: Slight changes from the article code
+	        across
+	        	s as c
+	        from
+	        	sum := 0
+	        loop
+	        	sum := sum + c.cursor_index * c.item.code
+	        end -- NOTE: Slight changes from the article code
 		end
 
 	bertrand_example_2
@@ -365,7 +371,7 @@ feature -- Loop Variant and Invariant
 			end
 				-- ... or ... you can just do it the Bertrand-way ... see `bertrand_example_4' except do "by-2" instead of 3.
 			across
-				(1 |..| 1_1000).new_cursor.reversed + 2 as c
+				(1 |..| 1_000).new_cursor.reversed + 2 as c
 			loop
 				print (c.item)
 			end
