@@ -27,6 +27,22 @@
 	EIS: "name=training_video_setters", "src=https://www.youtube.com/watch?v=PD5Iqxd2YLU"
 	EIS: "name=training_video_feature_groups", "src=https://www.youtube.com/watch?v=ryLLts_OKgQ"
 
+	session_20160210: "[
+		Wednesday, February 10th, 2016 7:30 PM
+		- Attendees:
+			Randal Humphries, Michael Vane, Brad, Daniel Rix, Larry Rix
+		- Planned
+			* Creation - Continued ...
+				- Creation and MVC Review (for Brad's benefit)
+				- TUPLE: General intro
+				- Type anchoring as creation_objects_anchor
+		- Unplanned
+			* Globals and data sharing
+		- Next
+			* Database access - General intro
+			* Project planning and design (OOD)
+		]"
+
 	session_20160206: "[
 		Saturday, February 6th, 2016 8:00 AM
 		- Planned
