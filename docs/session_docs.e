@@ -30,13 +30,17 @@
 	session_20160213: "[
 		Saturday, February 13th, 2016 9:00 AM
 		- Attendees:
-			* Larry Rix
+			* Larry, Randal, Brad, Rodger, Dan, Michael
 		- Planned:
 			* Take note of `all_examples' library!
 			* MVC Reloaded: The Pub-Sub library applied!
 				- Open the `pub_sub' library, `test' target
 				- Examine: MOCK_MAIN_WINDOW, MOCK_BUTTON, MOCK_MODEL, and MOCK_LABEL
 			* Database access using MS SQL Server (PostGreSQL did not work--yet!)
+				- SQLite3!!! (it might be lite, but its powerful!!!) 
+					+ {DB_TEST_SET}.sqlite3_tests
+				- MS SQL Server
+					+ {DB_TEST_SET}.database_tests
 				- Installing MS SQL Server and MS SQL Server Management Studio
 				- Installing Northwind DB
 				- Basic Steps:
@@ -54,7 +58,6 @@
 				- Using INSERT + Randomizer library to build test data!
 				- DB: What not to do! (SPs) Why?
 				- DB: What's okay (indexing, temp-constraints, tuning, replication, etc.)
-				- SQLite3!!! (it might be lite, but its powerful!!!)
 		]"
 
 	session_20160210: "[

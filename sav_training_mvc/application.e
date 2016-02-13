@@ -60,7 +60,7 @@ feature {NONE} -- Implementation
 	application: EV_APPLICATION
 			-- `application' contains the "event loop" which `main_window' runs within.
 
-	main_window: MAIN_WINDOW
+	main_window: SAMPLE_MAIN_WINDOW
 			-- `main_window' is "main" application window.
 
 end
