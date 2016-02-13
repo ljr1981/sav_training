@@ -1,7 +1,7 @@
 note
 	see: "notes at end of class"
 class
-	MSL_SQL_SERVER
+	MS_SQL_SERVER
 
 create
 	make
@@ -16,7 +16,7 @@ feature {NONE} -- Initialization
 			create data_manager
 			establish_connection
 			l_result := data_manager.load_list_with_select (customer_company_names_sql, create {TEMPLATE_CUSTOMER})	-- Result to ARRAYED_LIST [T]
-			data_manager.load_list_with_select (customer_company_names_sql, create {TEMPLATE_CUSTOMER}).do_nothing	-- SQL Applied/Result ignored
+--			data_manager.load_list_with_select (customer_company_names_sql, create {TEMPLATE_CUSTOMER}).do_nothing	-- SQL Applied/Result ignored
 			data_manager.disconnect
 		end
 

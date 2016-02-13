@@ -30,9 +30,9 @@ feature -- Test routines
 	database_tests
 		note
 			testing:
-				"covers/{MSL_SQL_SERVER}"
+				"covers/{MS_SQL_SERVER}"
 		local
-			l_db: MSL_SQL_SERVER
+			l_db: MS_SQL_SERVER
 		do
 			create l_db.make
 		end
@@ -82,23 +82,23 @@ feature -- Test routines
 			l_db.commit									-- End (with commit)
 			-----------------------------------------------------------------
 
-			-----------------------------------------------------------------
-				-- A bunch of Random INSERTs ...
-			l_db.begin_transaction (True)				-- Begin transaction
-			across
-				1 |..| randomizer.random_integer_in_range (100 |..| 1_000) as ic
-			loop
-				l_insert_string := sqlite_insert_template.twin
-				l_insert_string.replace_substring_all ("<<ID>>", (ic.item + 10).out)
-				l_insert_string.replace_substring_all ("<<NAME>>", randomizer.random_first_last_name)
-				l_insert_string.replace_substring_all ("<<AGE>>", randomizer.random_integer_in_range (25 |..| 65).out)
-				l_insert_string.replace_substring_all ("<<ADDRESS>>", randomizer.random_city_name)
-				l_insert_string.replace_substring_all ("<<SALARY>>", randomizer.random_integer_in_range (30_000 |..| 100_000).out)
-				create l_sql.make (l_insert_string, l_db)
-				l_sql.ensure_connected
-			end
-			l_db.commit									-- End (with commit)
-			-----------------------------------------------------------------
+--			-----------------------------------------------------------------
+--				-- A bunch of Random INSERTs ...
+--			l_db.begin_transaction (True)				-- Begin transaction
+--			across
+--				1 |..| randomizer.random_integer_in_range (100 |..| 1_000) as ic
+--			loop
+--				l_insert_string := sqlite_insert_template.twin
+--				l_insert_string.replace_substring_all ("<<ID>>", (ic.item + 10).out)
+--				l_insert_string.replace_substring_all ("<<NAME>>", randomizer.random_first_last_name)
+--				l_insert_string.replace_substring_all ("<<AGE>>", randomizer.random_integer_in_range (25 |..| 65).out)
+--				l_insert_string.replace_substring_all ("<<ADDRESS>>", randomizer.random_city_name)
+--				l_insert_string.replace_substring_all ("<<SALARY>>", randomizer.random_integer_in_range (30_000 |..| 100_000).out)
+--				create l_sql.make (l_insert_string, l_db)
+--				l_sql.ensure_connected
+--			end
+--			l_db.commit									-- End (with commit)
+--			-----------------------------------------------------------------
 
 			-----------------------------------------------------------------
 				-- Close the database
