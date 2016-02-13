@@ -54,6 +54,7 @@
 				- Using INSERT + Randomizer library to build test data!
 				- DB: What not to do! (SPs) Why?
 				- DB: What's okay (indexing, temp-constraints, tuning, replication, etc.)
+				- SQLite3!!! (it might be lite, but its powerful!!!)
 		]"
 
 	session_20160210: "[
