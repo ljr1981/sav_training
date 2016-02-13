@@ -1,3 +1,5 @@
+note
+	see: "notes at end of class"
 class
 	TEMPLATE_CUSTOMER
 
