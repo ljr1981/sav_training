@@ -56,6 +56,7 @@ feature -- Test routines
 			l_db: SQLITE_DATABASE
 			l_sql: SQLITE_STATEMENT
 			l_insert: SQLITE_INSERT_STATEMENT
+			l_insert_string: STRING
 		do
 			-----------------------------------------------------------------
 				-- Create (if needed) and open DB ...
@@ -76,6 +77,24 @@ feature -- Test routines
 				sqlite_insert as ic_inserts
 			loop
 				create l_sql.make (ic_inserts.item, l_db)
+				l_sql.ensure_connected
+			end
+			l_db.commit									-- End (with commit)
+			-----------------------------------------------------------------
+
+			-----------------------------------------------------------------
+				-- A bunch of Random INSERTs ...
+			l_db.begin_transaction (True)				-- Begin transaction
+			across
+				1 |..| randomizer.random_integer_in_range (100 |..| 1_000) as ic
+			loop
+				l_insert_string := sqlite_insert_template.twin
+				l_insert_string.replace_substring_all ("<<ID>>", (ic.item + 10).out)
+				l_insert_string.replace_substring_all ("<<NAME>>", randomizer.random_first_last_name)
+				l_insert_string.replace_substring_all ("<<AGE>>", randomizer.random_integer_in_range (25 |..| 65).out)
+				l_insert_string.replace_substring_all ("<<ADDRESS>>", randomizer.random_city_name)
+				l_insert_string.replace_substring_all ("<<SALARY>>", randomizer.random_integer_in_range (30_000 |..| 100_000).out)
+				create l_sql.make (l_insert_string, l_db)
 				l_sql.ensure_connected
 			end
 			l_db.commit									-- End (with commit)
@@ -108,6 +127,8 @@ CREATE TABLE COMPANY(
 			"INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) VALUES (5, 'David', 27, 'Texas', 85000.00 );",
 			"INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) VALUES (6, 'Kim', 22, 'South-Hall', 45000.00 );">>
 		end
+
+	sqlite_insert_template: STRING = "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) VALUES (<<ID>>, '<<NAME>>', <<AGE>>, '<<ADDRESS>>', <<SALARY>>);"
 
 	randomizer: RANDOMIZER
 			-- Random data generator for Current.
