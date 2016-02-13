@@ -27,6 +27,35 @@
 	EIS: "name=training_video_setters", "src=https://www.youtube.com/watch?v=PD5Iqxd2YLU"
 	EIS: "name=training_video_feature_groups", "src=https://www.youtube.com/watch?v=ryLLts_OKgQ"
 
+	session_20160213: "[
+		Saturday, February 13th, 2016 9:00 AM
+		- Attendees:
+			* Larry Rix
+		- Planned:
+			* Take note of `all_examples' library!
+			* MVC Reloaded: The Pub-Sub library applied!
+				- Open the `pub_sub' library, `test' target
+				- Examine: MOCK_MAIN_WINDOW, MOCK_BUTTON, MOCK_MODEL, and MOCK_LABEL
+			* Database access using MS SQL Server (PostGreSQL did not work--yet!)
+				- Installing MS SQL Server and MS SQL Server Management Studio
+				- Installing Northwind DB
+				- Basic Steps:
+					(1) Set up a connection string
+					(2) Establish the connection, ensuring is_connected
+					(3) Form up the SQL statement
+					(4) Ensure one has a TEMPLATE ready to go! (Predefined vs. Generic)
+					(5) Execute the SQL (begin transaction and commit if needed)
+					(6) Store off your ARRAYED_LIST or ANY result
+					(7) Disconnect from the database
+				- Pre-built SQL (SELECT, UPDATE, INSERT, DELETE)
+				- Generic TEMPLATEs
+				- Specialized TEMPLATEs
+				- Stored-procedures (SPs) (Good, Bad, Ugly)
+				- Using INSERT + Randomizer library to build test data!
+				- DB: What not to do! (SPs) Why?
+				- DB: What's okay (indexing, temp-constraints, tuning, replication, etc.)
+		]"
+
 	session_20160210: "[
 		Wednesday, February 10th, 2016 7:30 PM
 		- Attendees:

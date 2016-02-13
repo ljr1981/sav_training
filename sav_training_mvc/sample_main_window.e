@@ -60,7 +60,7 @@
 			Visual builders only work well in fixed and tabular presentations.
 		]"
 class
-	MAIN_WINDOW
+	SAMPLE_MAIN_WINDOW
 
 inherit
 	EV_TITLED_WINDOW
