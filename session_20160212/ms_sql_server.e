@@ -15,8 +15,7 @@ feature {NONE} -- Initialization
 		do
 			create data_manager
 			establish_connection
-			l_result := data_manager.load_list_with_select (customer_company_names_sql, create {TEMPLATE_CUSTOMER})	-- Result to ARRAYED_LIST [T]
---			data_manager.load_list_with_select (customer_company_names_sql, create {TEMPLATE_CUSTOMER}).do_nothing	-- SQL Applied/Result ignored
+			l_result := data_manager.load_list_with_select (customer_company_names_sql, create {TEMPLATE_CUSTOMER})
 			data_manager.disconnect
 		end
 

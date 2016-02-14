@@ -27,7 +27,8 @@
 	EIS: "name=training_video_setters", 		"src=https://www.youtube.com/watch?v=PD5Iqxd2YLU"
 	EIS: "name=training_video_feature_groups", 	"src=https://www.youtube.com/watch?v=ryLLts_OKgQ"
 	EIS: "name=training_video_sqlite3", 		"src=https://www.youtube.com/watch?v=R05JyyCIrOk"
-
+	EIS: "name=training_video_sqlite3", 		"src=https://youtu.be/RhX5pK6DoPw"
+	
 	session_20160213: "[
 		Saturday, February 13th, 2016 9:00 AM
 		- Attendees:
