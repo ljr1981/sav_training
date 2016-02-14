@@ -16,16 +16,17 @@
 		environment variable into the OS call for the PDF file.
 		]"
 
-	EIS: "name=training_video_ECMA", "src=https://www.youtube.com/watch?v=RDSPBQX7EY8"
-	EIS: "name=training_video_prefs", "src=https://www.youtube.com/watch?v=pNP1hBfkwx4"
-	EIS: "name=training_video_notes", "src=https://www.youtube.com/watch?v=rAKOD2-l7E8"
-	EIS: "name=training_video_creation", "src=https://www.youtube.com/watch?v=o0YYfmWURY4"
-	EIS: "name=training_video_debug", "src=https://www.youtube.com/watch?v=H-SKuaw4ttg"
-	EIS: "name=training_video_anchors", "src=https://www.youtube.com/watch?v=eNppFYmvj_I"
-	EIS: "name=training_video_attributes", "src=https://www.youtube.com/watch?v=GIxTuLGSXbA"
-	EIS: "name=training_video_combined", "src=https://www.youtube.com/watch?v=GIxTuLGSXbA"
-	EIS: "name=training_video_setters", "src=https://www.youtube.com/watch?v=PD5Iqxd2YLU"
-	EIS: "name=training_video_feature_groups", "src=https://www.youtube.com/watch?v=ryLLts_OKgQ"
+	EIS: "name=training_video_ECMA", 			"src=https://www.youtube.com/watch?v=RDSPBQX7EY8"
+	EIS: "name=training_video_prefs", 			"src=https://www.youtube.com/watch?v=pNP1hBfkwx4"
+	EIS: "name=training_video_notes", 			"src=https://www.youtube.com/watch?v=rAKOD2-l7E8"
+	EIS: "name=training_video_creation", 		"src=https://www.youtube.com/watch?v=o0YYfmWURY4"
+	EIS: "name=training_video_debug", 			"src=https://www.youtube.com/watch?v=H-SKuaw4ttg"
+	EIS: "name=training_video_anchors", 		"src=https://www.youtube.com/watch?v=eNppFYmvj_I"
+	EIS: "name=training_video_attributes", 		"src=https://www.youtube.com/watch?v=GIxTuLGSXbA"
+	EIS: "name=training_video_combined", 		"src=https://www.youtube.com/watch?v=GIxTuLGSXbA"
+	EIS: "name=training_video_setters", 		"src=https://www.youtube.com/watch?v=PD5Iqxd2YLU"
+	EIS: "name=training_video_feature_groups", 	"src=https://www.youtube.com/watch?v=ryLLts_OKgQ"
+	EIS: "name=training_video_sqlite3", 		"src=https://www.youtube.com/watch?v=R05JyyCIrOk"
 
 	session_20160213: "[
 		Saturday, February 13th, 2016 9:00 AM
