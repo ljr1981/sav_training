@@ -76,4 +76,8 @@
 		<library name="testing" location="$ISE_LIBRARY\library\testing\testing-safe.ecf"/>
 		<cluster name="tests" location=".\sav_training_web_simple\tests\" recursive="true"/>
 	</target>
+	<target name="sqlite_example" extends="sav_training">
+		<description>SQLite Example</description>
+		<root class="SQLITE_EXAMPLE" feature="make"/>
+	</target>
 </system>
