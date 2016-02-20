@@ -28,7 +28,32 @@
 	EIS: "name=training_video_feature_groups", 	"src=https://www.youtube.com/watch?v=ryLLts_OKgQ"
 	EIS: "name=training_video_sqlite3", 		"src=https://www.youtube.com/watch?v=R05JyyCIrOk"
 	EIS: "name=training_video_sqlite3", 		"src=https://youtu.be/RhX5pK6DoPw"
-	
+
+	EIS: "name=project_management", "src=http://research.microsoft.com/apps/mobile/news.aspx?post=/en-us/news/features/nagappan-100609.aspx"
+	EIS: "name=org_structure_study", "src=$GITHUB/sav_training/docs/the_influence_of_organizational_structure_on_software_quality_an_empirical_case_study.pdf"
+	EIS: "name=assertions_and_code_quality", "src=$GITHUB/sav_training/docs/assessing_the_relationship_between_software_assertions_and_code_quality.pdf"
+	EIS: "name=tdd", "src=$GITHUB/sav_training/docs/realizing_qualtity_improvement_through_tdd.pdf"
+
+	session_20160220: "[
+		Saturday, February 20th, 2016 9:00 AM
+		- Attendees:
+			* Larry, Randal, Brad, De'Aira, Rodgers, Michael
+		- Actual:
+			* Microsoft project management study (see EIS above)
+			* Lib, Obj, DLL files and what they are (high level)
+			* Sofware project "Universe"/"System"
+				- High-level concept vs. Implement w/Namespace/Packages
+				- Eiffel implementation (Project Settings)
+			* Basic review: Design by Contract
+			* Coding and Naming Conventions
+			* Define: Convention
+			* Project organization
+				- Programmer A writes code, Programmer B tests A's code
+				- Competition factor ("Find bugs--I dare you!")
+				- Facilitates learning?
+				- Improves documentation (programmer B does not "get it", asks A to write in-code docs)
+		]"
+
 	session_20160213: "[
 		Saturday, February 13th, 2016 9:00 AM
 		- Attendees:
