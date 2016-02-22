@@ -34,6 +34,25 @@
 	EIS: "name=assertions_and_code_quality", "src=$GITHUB/sav_training/docs/assessing_the_relationship_between_software_assertions_and_code_quality.pdf"
 	EIS: "name=tdd", "src=$GITHUB/sav_training/docs/realizing_qualtity_improvement_through_tdd.pdf"
 
+	session_20160224: "[
+		- Attendees:
+		
+		- Planned:
+			* Finite Automata
+				- Finite State Machines
+				- Turing Machines
+				- Moore Machine
+				- Mealy Machine
+				- Determinism v. Non-determinism
+		
+		QUESTION: What good is all this?
+		ANSWER: Starting with the notion of a Turing Machine, we see the birth of modern computing
+				and computer science. Alan Turing's work in the 1930s allowed us to build electronic
+				computers and much more! Turing's work (and others with him) gave us the basis for
+				all computing we have today, including AI and (perhaps) even quantum computing
+				(see Quantum Turing Machine).
+		]"
+
 	session_20160220: "[
 		Saturday, February 20th, 2016 9:00 AM
 		- Attendees:
@@ -52,6 +71,14 @@
 				- Competition factor ("Find bugs--I dare you!")
 				- Facilitates learning?
 				- Improves documentation (programmer B does not "get it", asks A to write in-code docs)
+		]"
+
+	session_20160217: "[
+		Wednesday, February 17th, 2016 7:30 PM
+		- Attendees:
+			* Randal, De'Aira
+		- Planned:
+			* Open discussion
 		]"
 
 	session_20160213: "[
