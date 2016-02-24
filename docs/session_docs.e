@@ -87,6 +87,16 @@
 				- DB: What's okay (indexing, temp-constraints, tuning, replication, etc.)
 		]"
 
+	possible_20160224: "[
+		GraphViz!
+		]"
+	EIS: "name=graphviz", "src=https://en.wikipedia.org/wiki/Graphviz"
+	EIS: "name=dot", "src=https://en.wikipedia.org/wiki/DOT_(graph_description_language)"
+	EIS: "name=gallery", "src=http://www.graphviz.org/Gallery.php"
+	EIS: "name=fsm", "src=http://www.graphviz.org/content/fsm"
+	EIS: "name=datastruct", "src=http://www.graphviz.org/content/datastruct"
+	EIS: "name=datastruct_text", "src=http://www.graphviz.org/Gallery/directed/datastruct.gv.txt"
+
 	session_20160210: "[
 		Wednesday, February 10th, 2016 7:30 PM
 		- Attendees:
