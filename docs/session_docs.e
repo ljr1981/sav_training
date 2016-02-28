@@ -34,9 +34,37 @@
 	EIS: "name=assertions_and_code_quality", "src=$GITHUB/sav_training/docs/assessing_the_relationship_between_software_assertions_and_code_quality.pdf"
 	EIS: "name=tdd", "src=$GITHUB/sav_training/docs/realizing_qualtity_improvement_through_tdd.pdf"
 
-	session_20160224: "[
+	session_20160227: "[
+		Saturday, February 27th, 2016 9:30 PM
 		- Attendees:
-		
+			Larry, Randal, Rodgers
+		- Planned:
+			* FSM Implementation - More contracts
+		- Actual:
+			* state_machine library set up on Rodgers machine
+			* fixes to a number of libraries with $GITHUB vs. hard-coded pathing
+			* more contracts were added to the code
+			* ran into a complex "stumper" on transition uniqueness
+			* resolved "stumper" next morning with UUID (see state_machine library)
+		]"
+
+	session_20160227: "[
+		Saturday, February 27th, 2016 9:00 AM
+		- Attendees:
+			Larry, Michael, Randal, Rodgers, De'Aira, Brad
+		- Planned:
+			* FSM Implementation
+		- Actual:
+			* FSM Review (Rodgers and De'Aira caught up)
+			* FSM Implementation review of existing code
+			* Group members worked together to Contract-review implementation
+			* Group looked at project issue with Brad -> Solution: Logging will hopefully reveal!
+		]"
+
+	session_20160224: "[
+		Wednesday, February 24th, 2016 7:30 PM
+		- Attendees:
+			Larry,Michael,Randal,Brad
 		- Planned:
 			* Finite Automata
 				- Finite State Machines
