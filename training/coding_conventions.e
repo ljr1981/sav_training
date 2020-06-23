@@ -137,11 +137,11 @@ feature -- Convention Examples
 				them!).
 				]"
 		local
-			this,is,no,good,nor,either,cuz,its,hard,too,to,read: BOOLEAN
+			this,l_is,no,good,nor,either,cuz,its,hard,too,to,read: BOOLEAN
 			we,dont,need,right,what,see,want: BOOLEAN
 		do
 				-- Cramming everything on one line is not really good form; hard to read ...
-			this := is; no := good; nor := this; either := cuz; its := hard; too := read;
+			this := l_is; no := good; nor := this; either := cuz; its := hard; too := read;
 
 				-- Also ...
 			we := dont;
@@ -151,7 +151,7 @@ feature -- Convention Examples
 				-- Instead
 			what := we
 			want := to
-			see := is
+			see := l_is
 			this := cuz
 			its := good -- Every statement on its own line. Easier to ready, yes?
 		end

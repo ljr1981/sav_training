@@ -3,9 +3,6 @@ class
 
 inherit
 	JUNK_CREATABLE
-		redefine
-			creation_objects_anchor
-		end
 
 create
 	make
